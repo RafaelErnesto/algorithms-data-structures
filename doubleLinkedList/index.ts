@@ -13,5 +13,7 @@ linkedList.addAtTail(new Node(6))
 linkedList.addAtTail(new Node(7))
 linkedList.addAtTail(new Node(8))
 linkedList.addAtPosition(8,new Node(9))
-
+linkedList.printList()
+linkedList.deleteAtPosition(1)
+console.log('\n')
 linkedList.printList()

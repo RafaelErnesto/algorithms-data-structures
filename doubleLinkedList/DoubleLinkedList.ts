@@ -41,6 +41,42 @@ export class DoubleLinkedList {
     
     return this.addAtPosition(targetPosition, newNode, currentNode!.next)
   }
+
+  deleteAtPosition(targetPosition:number, currentNode = this.head): any {
+  	this.listInitialized()
+  	if(currentNode!.data !== targetPosition) {
+
+      if(currentNode!.next === null) {
+        console.log('Target not found on list')
+        return
+      }
+      
+      return this.deleteAtPosition(targetPosition, currentNode!.next)
+    }
+
+    const previousNode = currentNode!.previous
+    const nextNode = currentNode?.next
+
+    //it's the head
+    if(previousNode === null) {
+      if(nextNode){
+        nextNode.previous = null
+        this.head = nextNode
+        return
+      }
+
+      this.head = null
+      return
+    }
+
+    previousNode!.next = nextNode!
+
+    if(nextNode) {
+      nextNode.previous = previousNode
+    }
+    
+    return
+  }
   
   printList() {
   	let currentNode = this.head
