@@ -2,10 +2,10 @@ import { Node } from './Node'
 
 export class LinkedList {
 
-	head: Node
+	private head?: Node
   
   constructor() {
-  	this.head = null
+  	this.head = undefined
   }
   
  	init(head: Node) {
@@ -13,19 +13,19 @@ export class LinkedList {
  	}
   
   listInitialized() {
-  	if(this.head === null) {
+  	if(this.head === undefined) {
     	throw new Error('Linked List is empty')
     }
   }
   
-  add(newNode: Node, currentNode = this.head) {
+  add(newNode: Node, currentNode = this.head): any {
   	this.listInitialized()
-  	if(currentNode.next === null) {
-    	currentNode.next = newNode
+  	if(currentNode!.next === undefined) {
+    	currentNode!.next = newNode
       return
     }
     
-    return this.add(newNode, currentNode.next)
+    return this.add(newNode, currentNode!.next)
   }
   
   printList() {
@@ -33,8 +33,8 @@ export class LinkedList {
   	this.listInitialized()
       
     do{
-    	console.log(currentNode.data)
-    	currentNode = currentNode.next
-    }while(currentNode!== null)
+    	console.log(currentNode!.data)
+    	currentNode = currentNode!.next
+    }while(currentNode!== undefined)
   }
 }
