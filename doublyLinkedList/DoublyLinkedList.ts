@@ -1,6 +1,6 @@
 import { Node } from './Node'
 
-export class DoubleLinkedList {
+export class DoublyLinkedList {
 
 	private head: Node | null 
 

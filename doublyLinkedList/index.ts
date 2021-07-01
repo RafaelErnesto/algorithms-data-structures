@@ -1,7 +1,7 @@
-import { DoubleLinkedList } from "./DoubleLinkedList"
+import { DoublyLinkedList } from "./DoublyLinkedList"
 import { Node } from './Node'
 
-const linkedList = new DoubleLinkedList()
+const linkedList = new DoublyLinkedList()
 
 linkedList.init(new Node(1))
 
